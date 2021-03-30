@@ -45,6 +45,17 @@
         </a>
       </el-col>
 
+      <el-col :span="2" offset=1>
+        <a href="http://projectissue.longnows.cn" target="_blank">
+          <el-card :body-style="{ padding: '0px' }">
+            <img src="https://tse3-mm.cn.bing.net/th/id/OIP.AMCwt_4jO6hl_9iZrpV6gAHaHa?pid=ImgDet&rs=1" class="image">
+            <div class="el-row--flex is-justify-center" style="padding: 15px;">
+              <span>Project Issue</span>
+            </div>
+          </el-card>
+        </a>
+      </el-col>
+
     </el-row>
   </div>
 </template>
