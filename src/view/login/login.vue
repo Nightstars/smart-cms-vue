@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="team-name hidden-sm-and-down"><img src="@/assets/image/login/team-name.png" alt="logo" /></div>
+<!--    <div class="team-name hidden-sm-and-down"><img src="@/assets/image/login/team-name.png" alt="logo" /></div>-->
     <div class="form-box" v-loading="loading" element-loading-background="rgba(0, 0, 0, 0)">
       <div class="title"><h1 title="Lin">Smart CMS</h1></div>
       <form class="login-form" autocomplete="off" @submit.prevent="throttleLogin()">
@@ -32,8 +32,8 @@ export default {
       wait: 2000, // 2000ms之内不能重复发起请求
       throttleLogin: null, // 节流登录
       form: {
-        username: 'root',
-        password: '123456',
+        username: '',
+        password: '',
       },
     }
   },
@@ -79,8 +79,8 @@ export default {
 .login {
   width: 100%;
   height: 100%;
-  background-size: auto;
-  background: #1b2c5f url('../../assets/image/login/login-ba.png') no-repeat center center;
+  background-size: cover;
+  background: #1b2c5f url('../../assets/image/login/login-bg3.jpg') no-repeat center center;
 
   .team-name {
     position: fixed;
@@ -107,8 +107,13 @@ export default {
         padding-left: 74px;
         box-sizing: border-box;
         text-align: left;
-        color: #8c98ae;
+        color: whitesmoke;
       }
+    }
+
+    input::-webkit-input-placeholder {
+      color: #aab2bd;
+      font-size: 12px;
     }
 
     .login-form {
@@ -147,7 +152,7 @@ export default {
       .submit-btn {
         width: 100%;
         height: 70px;
-        color: #c4c9d2;
+        color: whitesmoke;
         font-size: 16px;
         text-align: left;
         box-sizing: border-box;
