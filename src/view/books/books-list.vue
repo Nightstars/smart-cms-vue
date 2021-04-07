@@ -81,7 +81,8 @@ export default {
         type: 'warning',
       }).then(async () => {
         const res = await books.deleteBook(val.row.id)
-        if (res.code < window.MAX_SUCCESS_CODE) {
+        console.log(res)
+        if (res.code == '10213') {
           await this.getBooks()
           this.$message({
             type: 'success',

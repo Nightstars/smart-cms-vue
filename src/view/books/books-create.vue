@@ -57,7 +57,7 @@ export default {
         this.loading = true
         const res = await books.createBook(this.form)
         this.loading = false
-        if (res.code < window.MAX_SUCCESS_CODE) {
+        if (res.code == '10212') {
           this.$message.success(`${res.message}`)
           this.resetForm(formName)
         }
