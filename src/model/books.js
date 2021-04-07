@@ -15,7 +15,7 @@ class Books {
   }
 
   async deleteBook(id) {
-    const res = await _delete(`v1/book/${id}`)
+    const res = await _delete(`/v1/books/${id}`)
     return res
   }
 

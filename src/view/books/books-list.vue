@@ -54,7 +54,7 @@ export default {
         name: '删除',
         func: 'handleDelete',
         type: 'danger',
-        permission: '删除图书',
+        permission: '删除书籍',
       },
     ]
     this.loading = false
@@ -81,7 +81,8 @@ export default {
         type: 'warning',
       }).then(async () => {
         const res = await books.deleteBook(val.row.id)
-        if (res.code < window.MAX_SUCCESS_CODE) {
+        console.log(res)
+        if (res.code == '10213') {
           await this.getBooks()
           this.$message({
             type: 'success',
