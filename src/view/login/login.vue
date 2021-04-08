@@ -112,7 +112,7 @@ export default {
     }
 
     input::-webkit-input-placeholder {
-      color: #aab2bd;
+      color: orangered;
       font-size: 12px;
     }
 
@@ -130,7 +130,7 @@ export default {
           width: 100%;
           height: 100%;
           background: transparent;
-          color: #c4c9d2;
+          color: whitesmoke;
           font-size: 14px;
           padding-left: 74px;
           box-sizing: border-box;
