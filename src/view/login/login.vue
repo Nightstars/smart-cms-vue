@@ -80,7 +80,7 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background: #1b2c5f url('../../assets/image/login/login-bg3.jpg') no-repeat center center;
+  background: #1b2c5f url('../../assets/image/login/login-bg4.jpg') no-repeat center center;
 
   .team-name {
     position: fixed;
