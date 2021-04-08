@@ -10,7 +10,7 @@ class Books {
   }
 
   async editBook(id, info) {
-    const res = await put(`v1/book/${id}`, info)
+    const res = await put(`v1/books/${id}`, info)
     return res
   }
 

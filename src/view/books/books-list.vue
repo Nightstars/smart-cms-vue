@@ -49,7 +49,12 @@ export default {
     this.loading = true
     await this.getBooks()
     this.operate = [
-      { name: '编辑', func: 'handleEdit', type: 'primary' },
+      {
+        name: '编辑',
+        func: 'handleEdit',
+        type: 'primary',
+        permission: '修改书籍',
+      },
       {
         name: '删除',
         func: 'handleDelete',
