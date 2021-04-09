@@ -37,6 +37,11 @@ import books from '@/model/books'
 
 export default {
   name: 'books-modify',
+  props: {
+    editBookID: {
+      type: Number,
+    },
+  },
   data() {
     return {
       loading: false,
@@ -48,8 +53,27 @@ export default {
       },
     }
   },
-  async mounted(){
-
+  async mounted() {
+    this.loading = true
+    this.form = await books.getBook(this.editBookID)
+    this.loading = false
+  },
+  methods: {
+    async submitForm() {
+      const res = await books.editBook(this.editBookID, this.form)
+      console.log(res)
+      if (res.code == '10214') {
+        this.$message.success(`${res.message}`)
+        this.$emit('editClose')
+      }
+    },
+    // 重置表单
+    resetForm(formName) {
+      this.$refs[formName].resetFields()
+    },
+    back() {
+      this.$emit('editClose')
+    },
   }
 }
 </script>

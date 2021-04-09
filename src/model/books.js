@@ -20,14 +20,14 @@ class Books {
   }
 
   async getBook(id) {
-    const res = await get(`v1/book/${id}`)
+    const res = await get(`v1/books/${id}`)
     return res
   }
 
   async getBooks() {
     return _axios({
       method: 'get',
-      url: 'v1/books/getall',
+      url: 'v1/books',
       handleError: true,
     })
   }
