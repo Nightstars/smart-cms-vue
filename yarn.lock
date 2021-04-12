@@ -4373,6 +4373,14 @@
     "jsbn" "~0.1.0"
     "safer-buffer" "^2.1.0"
 
+"echarts@^5.0.2":
+  "integrity" "sha512-En0VYpc96nw2/2AZoBWPHsGi471zMublttj50kfFpYAeR4geup0Tj9iVgEXh7QYZFPnRiruDJEjcB5PXZ+BYzQ=="
+  "resolved" "https://registry.npmjs.org/echarts/-/echarts-5.0.2.tgz"
+  "version" "5.0.2"
+  dependencies:
+    "tslib" "2.0.3"
+    "zrender" "5.0.4"
+
 "editorconfig@^0.15.3":
   "integrity" "sha512-M9wIMFx96vq0R4F+gRpY3o2exzb8hEj/n9S8unZtHSvYjibBp/iMufSzvmOcV/laG0ZtuTVGtiJggPOSW2r93g=="
   "resolved" "https://registry.npmjs.org/editorconfig/-/editorconfig-0.15.3.tgz"
@@ -11398,6 +11406,11 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.10.0.tgz"
   "version" "1.10.0"
 
+"tslib@2.0.3":
+  "integrity" "sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.0.3.tgz"
+  "version" "2.0.3"
+
 "tty-browserify@0.0.0":
   "integrity" "sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY="
   "resolved" "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz"
@@ -12296,3 +12309,10 @@
     "is-ci" "^1.0.10"
     "normalize-path" "^1.0.0"
     "strip-indent" "^2.0.0"
+
+"zrender@5.0.4":
+  "integrity" "sha512-DJpy0yrHYY5CuH6vhb9IINWbjvBUe/56J8aH86Jb7O8rRPAYZ3M2E469Qf5B3EOIfM3o3aUrO5edRQfLJ+l1Qw=="
+  "resolved" "https://registry.npmjs.org/zrender/-/zrender-5.0.4.tgz"
+  "version" "5.0.4"
+  dependencies:
+    "tslib" "2.0.3"

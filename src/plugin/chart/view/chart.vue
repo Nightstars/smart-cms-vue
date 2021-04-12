@@ -1,64 +1,93 @@
 <template>
   <div class="container">
+    <!--    <el-row :gutter="20">-->
+    <!--      <el-col :span="16">-->
+    <!--        <div class="grid-content bg-purple">-->
+    <!--          <group-column></group-column>-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--      <el-col :span="8" class="none">-->
+    <!--        <div class="grid-content bg-purple">-->
+    <!--          <radar></radar>-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--    </el-row>-->
+    <!--    <el-row :gutter="20">-->
+    <!--      <el-col :span="16">-->
+    <!--        <el-row :gutter="20">-->
+    <!--          <el-col :span="12">-->
+    <!--            <div class="grid-content bg-purple">-->
+    <!--              <tiny-area-july></tiny-area-july>-->
+    <!--            </div>-->
+    <!--          </el-col>-->
+    <!--          <el-col :span="12">-->
+    <!--            <div class="grid-content bg-purple">-->
+    <!--              <tiny-area-june></tiny-area-june>-->
+    <!--            </div>-->
+    <!--          </el-col>-->
+    <!--        </el-row>-->
+    <!--        <el-row :gutter="20">-->
+    <!--          <el-col :span="24">-->
+    <!--            <div class="grid-content bg-purple">-->
+    <!--              <line-charts></line-charts>-->
+    <!--            </div>-->
+    <!--          </el-col>-->
+    <!--        </el-row>-->
+    <!--      </el-col>-->
+    <!--      <el-col :span="8" class="none">-->
+    <!--        <div class="grid-content bg-purple">-->
+    <!--          <Rose></Rose>-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--    </el-row>-->
     <el-row :gutter="20">
-      <el-col :span="16">
+      <el-col :span="8">
         <div class="grid-content bg-purple">
-          <group-column></group-column>
+          <cpu></cpu>
         </div>
       </el-col>
-      <el-col :span="8" class="none">
+      <el-col :span="8">
         <div class="grid-content bg-purple">
-          <radar></radar>
+          <cpu></cpu>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <div class="grid-content bg-purple">
+          <cpu></cpu>
         </div>
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="16">
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <div class="grid-content bg-purple">
-              <tiny-area-july></tiny-area-july>
-            </div>
-          </el-col>
-          <el-col :span="12">
-            <div class="grid-content bg-purple">
-              <tiny-area-june></tiny-area-june>
-            </div>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="24">
-            <div class="grid-content bg-purple">
-              <line-charts></line-charts>
-            </div>
-          </el-col>
-        </el-row>
-      </el-col>
-      <el-col :span="8" class="none">
-        <div class="grid-content bg-purple">
-          <rose></rose>
-        </div>
-      </el-col>
+      <el-col :span="6"
+        ><div class="grid-content bg-purple"><disk></disk></div
+      ></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import GroupColumn from '../component/grouped-column'
-import Radar from '../component/radar'
-import TinyAreaJuly from '../component/tiny-area-july'
-import TinyAreaJune from '../component/tiny-area-june'
-import LineCharts from '../component/line-chart'
-import Rose from '../component/rose'
+// import GroupColumn from '../component/grouped-column'
+// import Radar from '../component/radar'
+// import TinyAreaJuly from '../component/tiny-area-july'
+// import TinyAreaJune from '../component/tiny-area-june'
+// import LineCharts from '../component/line-chart'
+// import Rose from '../component/rose'
+import cpu from '../component/cpu'
+import disk from '../component/disk'
 
 export default {
   components: {
-    Rose,
-    GroupColumn,
-    Radar,
-    TinyAreaJuly,
-    TinyAreaJune,
-    LineCharts,
+    // Rose,
+    // GroupColumn,
+    // Radar,
+    // TinyAreaJuly,
+    // TinyAreaJune,
+    // LineCharts,
+    cpu,
+    disk,
   },
   data() {
     return {
