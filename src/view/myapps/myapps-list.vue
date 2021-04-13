@@ -4,7 +4,7 @@
       <el-col :span="2">
         <a href="http://cloudapps.life:8889" target="_blank">
           <el-card :body-style="{ padding: '0px' }">
-            <img src="https://www.leiue.com/uploads/2018/09/cloud-storage.jpg" class="image">
+            <img src="https://www.leiue.com/uploads/2018/09/cloud-storage.jpg" class="image" />
             <div class="el-row--flex is-justify-center" style="padding: 15px;">
               <span>mycloud</span>
             </div>
@@ -12,10 +12,13 @@
         </a>
       </el-col>
 
-      <el-col :span="2" offset=1>
+      <el-col :span="2" offset="1">
         <a href="http://cloudapps.life:9999" target="_blank">
           <el-card :body-style="{ padding: '0px' }">
-            <img src="https://th.bing.com/th/id/R543bc6bf4d5348ed1165bba008b10c9a?rik=%2fWDdmo9mqYNvHQ&riu=http%3a%2f%2fwww.huatusoft.com%2fupload%2f201810%2f31%2f201810311612419306.jpg&ehk=7%2fkgl1VH4jY3V%2fvSeQ9P4hyGqocaE0HVX3TMoqOJ4p4%3d&risl=&pid=ImgRaw" class="image">
+            <img
+              src="https://th.bing.com/th/id/R543bc6bf4d5348ed1165bba008b10c9a?rik=%2fWDdmo9mqYNvHQ&riu=http%3a%2f%2fwww.huatusoft.com%2fupload%2f201810%2f31%2f201810311612419306.jpg&ehk=7%2fkgl1VH4jY3V%2fvSeQ9P4hyGqocaE0HVX3TMoqOJ4p4%3d&risl=&pid=ImgRaw"
+              class="image"
+            />
             <div class="el-row--flex is-justify-center" style="padding: 15px;">
               <span>mybolg</span>
             </div>
@@ -23,10 +26,10 @@
         </a>
       </el-col>
 
-      <el-col :span="2" offset=1>
+      <el-col :span="2" offset="1">
         <a href="http://cloudapps.life:8088" target="_blank">
           <el-card :body-style="{ padding: '0px' }">
-            <img src="https://pic4.zhimg.com/v2-6318332ded946c504ba8d9d29ea05785_r.jpg" class="image">
+            <img src="https://pic4.zhimg.com/v2-6318332ded946c504ba8d9d29ea05785_r.jpg" class="image" />
             <div class="el-row--flex is-justify-center" style="padding: 15px;">
               <span>openwrt</span>
             </div>
@@ -34,10 +37,10 @@
         </a>
       </el-col>
 
-      <el-col :span="2" offset=1>
+      <el-col :span="2" offset="1">
         <a href="https://kdocs.cn/l/ci12PKtsVGM2" target="_blank">
           <el-card :body-style="{ padding: '0px' }">
-            <img src="https://img95.699pic.com/photo/40007/9238.jpg_wh300.jpg!/fh/300/quality/90" class="image">
+            <img src="https://img95.699pic.com/photo/40007/9238.jpg_wh300.jpg!/fh/300/quality/90" class="image" />
             <div class="el-row--flex is-justify-center" style="padding: 15px;">
               <span>晨会</span>
             </div>
@@ -45,10 +48,10 @@
         </a>
       </el-col>
 
-      <el-col :span="2" offset=1>
+      <el-col :span="2" offset="1">
         <a href="http://projectissue.longnows.cn" target="_blank">
           <el-card :body-style="{ padding: '0px' }">
-            <img src="https://tse3-mm.cn.bing.net/th/id/OIP.AMCwt_4jO6hl_9iZrpV6gAHaHa?pid=ImgDet&rs=1" class="image">
+            <img src="https://tse3-mm.cn.bing.net/th/id/OIP.AMCwt_4jO6hl_9iZrpV6gAHaHa?pid=ImgDet&rs=1" class="image" />
             <div class="el-row--flex is-justify-center" style="padding: 15px;">
               <span>Project Issue</span>
             </div>
@@ -56,14 +59,29 @@
         </a>
       </el-col>
 
+      <el-col :span="2" offset="1">
+        <a href="http://projectissue.longnows.cn" target="_blank">
+          <el-card :body-style="{ padding: '0px' }">
+            <!--            <div style="background: #495468;border-radius: 10px;">-->
+            <img
+              src="https://src.onlinedown.net/supply/sup_logo/logo-1128/306996_g.jpg"
+              class="personal-avatar"
+              alt=""
+            />
+            <div class="el-row--flex is-justify-center" style="padding: 15px;">
+              <!--                <span class="influence-font" style="border: 1px solid #67C23A;padding: 5px;border-radius: 30px">Project Issue</span>-->
+              <el-tag type="success">Project Issue</el-tag>
+            </div>
+            <!--            </div>-->
+          </el-card>
+        </a>
+      </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -91,10 +109,26 @@ export default {
 .clearfix:before,
 .clearfix:after {
   display: table;
-  content: "";
+  content: '';
 }
 
 .clearfix:after {
-  clear: both
+  clear: both;
+}
+
+.personal-avatar {
+  width: 70%;
+  height: 70%;
+  margin: 5px auto 0;
+  padding: 2px;
+  border-radius: 75px;
+  box-shadow: 0 0 30px 0 #cfd5e3;
+}
+
+.influence-font {
+  font-size: 18px;
+  line-height: 21px;
+  color: #606266;
+  font-weight: bold;
 }
 </style>

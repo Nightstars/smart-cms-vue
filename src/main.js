@@ -1,6 +1,8 @@
 import '@babel/polyfill'
 import Vue from 'vue'
 import ElementUI from 'element-ui'
+// import echarts
+import * as echarts from 'echarts'
 
 import '@/config/global'
 import '@/lin/mixin'
@@ -45,5 +47,7 @@ const AppInstance = new Vue({
   render: h => h(App),
 }).$mount('#app')
 
+// echarts
+AppInstance.echarts = echarts
 // 设置 App 实例
 window.App = AppInstance
