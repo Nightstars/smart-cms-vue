@@ -43,27 +43,63 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <cpu></cpu>
+          <cpu class="su-center"></cpu>
+          <div class="label-txt">
+            <el-tag type="success">CPU</el-tag>
+          </div>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <cpu></cpu>
+          <mem class="su-center"></mem>
+          <div class="label-txt">
+            <el-tag type="success">Memory</el-tag>
+          </div>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <cpu></cpu>
+          <swap class="su-center"></swap>
+          <div class="label-txt">
+            <el-tag type="success">SWAP</el-tag>
+          </div>
         </div>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
-      <el-col :span="6"
-        ><div class="grid-content bg-purple"><disk></disk></div
-      ></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+
+    <el-row :gutter="20" style="margin-top: 20px;">
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <disk0 class="su-center"></disk0>
+          <div class="label-txt">
+            <el-tag type="success">/</el-tag>
+          </div>
+        </div></el-col
+      >
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <disk1 class="su-center"></disk1>
+          <div class="label-txt">
+            <el-tag type="success">/data</el-tag>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <disk2 class="su-center"></disk2>
+          <div class="label-txt">
+            <el-tag type="success">/file</el-tag>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <disk class="su-center"></disk>
+          <div class="label-txt">
+            <el-tag type="success">/mydata</el-tag>
+          </div>
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -77,6 +113,11 @@
 // import Rose from '../component/rose'
 import cpu from '../component/cpu'
 import disk from '../component/disk'
+import mem from '@/plugin/chart/component/mem'
+import swap from '@/plugin/chart/component/swap'
+import disk0 from '@/plugin/chart/component/disk0'
+import disk1 from '@/plugin/chart/component/disk1'
+import disk2 from '@/plugin/chart/component/disk2'
 
 export default {
   components: {
@@ -88,6 +129,11 @@ export default {
     // LineCharts,
     cpu,
     disk,
+    mem,
+    swap,
+    disk0,
+    disk1,
+    disk2,
   },
   data() {
     return {
@@ -132,7 +178,7 @@ export default {
         box-shadow: 0px 2px 14px 0px rgba(243, 243, 243, 1);
         border-radius: 8px;
         min-height: 36px;
-        margin-bottom: 20px;
+        padding-top: 20px;
       }
     }
   }
@@ -141,5 +187,15 @@ export default {
   .none {
     display: none;
   }
+}
+
+.su-center {
+  margin: 0 auto;
+}
+
+.label-txt {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: -50px;
 }
 </style>

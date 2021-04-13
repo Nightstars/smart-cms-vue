@@ -1,16 +1,16 @@
 <template>
-  <div id="myDiskChart3" :style="{ width: '300px', height: '300px' }"></div>
+  <div id="myDiskChart0" :style="{ width: '300px', height: '300px' }"></div>
 </template>
 
 <script>
 export default {
-  name: 'disk',
+  name: 'disk0',
   mounted() {
-    const myDiskChart = this.$root.echarts.init(document.getElementById('myDiskChart3'))
+    const myDiskChart = this.$root.echarts.init(document.getElementById('myDiskChart0'))
     // 绘制图表
     const optins = {
       title: {
-        text: '/mydata',
+        text: '/',
         subtext: '',
         left: 'center',
       },
@@ -23,7 +23,7 @@ export default {
       },
       series: [
         {
-          name: '/mydata',
+          name: '/',
           color: ['#91cc75', '#ee6666'],
           type: 'pie',
           radius: '50%',
