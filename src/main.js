@@ -3,6 +3,9 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 // import echarts
 import * as echarts from 'echarts'
+// moment
+import moment from 'moment'
+import 'moment/locale/zh-cn'
 
 import '@/config/global'
 import '@/lin/mixin'
@@ -49,5 +52,8 @@ const AppInstance = new Vue({
 
 // echarts
 AppInstance.echarts = echarts
+// moment
+moment.locale('zh-cn')
+Vue.prototype.$moment = moment
 // 设置 App 实例
 window.App = AppInstance

@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import http from '../../../http/index'
+
 export default {
   name: 'disk2',
   mounted() {
@@ -43,8 +45,11 @@ export default {
     }
 
     setInterval(() => {
-      optins.series[0].data[0].value = (Math.random() * 20000).toFixed(2) - 0
-      optins.series[0].data[1].value = (Math.random() * 1000).toFixed(2) - 0
+      http.get('/fs').then(res => {
+        optins.series[0].data[0].value = (res[2].free / 1024 / 1024 / 1024).toFixed(2) - 0
+        optins.series[0].data[1].value = (res[2].used / 1024 / 1024 / 1024).toFixed(2) - 0
+        optins.title.subtext = `${(res[2].size / 1024 / 1024 / 1024).toFixed(2) - 0}G`
+      })
       myDiskChart.setOption(optins, true)
     }, 1000)
   },
