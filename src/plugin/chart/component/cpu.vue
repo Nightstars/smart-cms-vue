@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import http from '../../../http/index'
+
 export default {
   name: 'cpu',
   mounted() {
@@ -57,14 +59,16 @@ export default {
           },
           data: [
             {
-              value: 70,
+              value: 0,
             },
           ],
         },
       ],
     }
     setInterval(() => {
-      optins.series[0].data[0].value = (Math.random() * 30).toFixed(2) - 0
+      http.get('/quicklook').then(res => {
+        optins.series[0].data[0].value = res.cpu.toFixed(2) - 0
+      })
       myChart.setOption(optins, true)
     }, 1000)
   },

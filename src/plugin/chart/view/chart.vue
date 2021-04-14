@@ -101,6 +101,26 @@
         </div>
       </el-col>
     </el-row>
+
+    <el-row :gutter="20" style="margin-top: 20px;">
+      <el-col :span="12">
+        <div class="grid-content bg-purple">
+          <netens33 class="su-center"></netens33>
+          <div class="label-txt-line">
+            <el-tag type="success">ens33--RX</el-tag>
+          </div>
+        </div>
+      </el-col>
+
+      <el-col :span="12">
+        <div class="grid-content bg-purple">
+          <netens33Tx class="su-center"></netens33Tx>
+          <div class="label-txt-line">
+            <el-tag type="success">ens33--TX</el-tag>
+          </div>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -118,6 +138,8 @@ import swap from '@/plugin/chart/component/swap'
 import disk0 from '@/plugin/chart/component/disk0'
 import disk1 from '@/plugin/chart/component/disk1'
 import disk2 from '@/plugin/chart/component/disk2'
+import netens33 from '@/plugin/chart/component/netens33'
+import netens33Tx from '@/plugin/chart/component/netens33Tx'
 
 export default {
   components: {
@@ -134,6 +156,8 @@ export default {
     disk0,
     disk1,
     disk2,
+    netens33,
+    netens33Tx,
   },
   data() {
     return {
@@ -197,5 +221,11 @@ export default {
   text-align: center;
   padding-bottom: 30px;
   margin-top: -50px;
+}
+
+.label-txt-line {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 </style>

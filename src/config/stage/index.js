@@ -1,5 +1,5 @@
 import adminConfig from './admin'
-import bookConfig from './book' // 引入图书管理路由文件
+// import bookConfig from './book' // 引入图书管理路由文件
 import booksConfig from './books'
 import myappsConfig from './myapps'
 import pluginsConfig from './plugin'
@@ -7,16 +7,16 @@ import Utils from '@/lin/util/util'
 
 // eslint-disable-next-line import/no-mutable-exports
 let homeRouter = [
-  {
-    title: '林间有风',
-    type: 'view',
-    name: Symbol('about'),
-    route: '/about',
-    filePath: 'view/about/about.vue',
-    inNav: true,
-    icon: 'iconfont icon-iconset0103',
-    order: 1,
-  },
+  // {
+  //   title: '林间有风',
+  //   type: 'view',
+  //   name: Symbol('about'),
+  //   route: '/about',
+  //   filePath: 'view/about/about.vue',
+  //   inNav: true,
+  //   icon: 'iconfont icon-iconset0103',
+  //   order: 1,
+  // },
   {
     title: '日志管理',
     type: 'view',
@@ -46,7 +46,7 @@ let homeRouter = [
     inNav: false,
     icon: 'iconfont icon-rizhiguanli',
   },
-  bookConfig,
+  // bookConfig,
   booksConfig,
   myappsConfig,
   adminConfig,
