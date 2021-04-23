@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import books from '@/model/books'
+import apps from '@/model/apps'
 
 export default {
   data() {
@@ -55,10 +55,12 @@ export default {
     async submitForm(formName) {
       try {
         this.loading = true
-        const res = await books.createBook(this.form)
+        const res = await apps.createApps(this.form)
         this.loading = false
         // eslint-disable-next-line eqeqeq
-        if (res.code == '10212') {
+        console.log(res)
+        // eslint-disable-next-line eqeqeq
+        if (res.code == '10215') {
           this.$message.success(`${res.message}`)
           this.resetForm(formName)
         }

@@ -57,6 +57,7 @@ export default {
         this.loading = true
         const res = await books.createBook(this.form)
         this.loading = false
+        // eslint-disable-next-line eqeqeq
         if (res.code == '10212') {
           this.$message.success(`${res.message}`)
           this.resetForm(formName)

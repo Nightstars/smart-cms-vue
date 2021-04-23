@@ -26,6 +26,15 @@ const myappsRouter = {
       inNav: true,
       icon: 'iconfont icon-tushuguanli',
     },
+    {
+      title: '应用管理',
+      type: 'view',
+      name: 'mgrapps',
+      route: '/myapps/mgr',
+      filePath: 'view/myapps/myapps-mgr.vue',
+      inNav: true,
+      icon: 'iconfont icon-tushuguanli',
+    },
   ],
 }
 
