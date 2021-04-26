@@ -1,77 +1,13 @@
 <template>
   <div>
-    <el-row style="padding: 15px;">
-      <el-col :span="2">
-        <a href="http://cloudapps.life:8889" target="_blank">
+    <el-row :gutter="20" style="margin-left: 55px;">
+      <el-col :span="3" v-for="(item, idx) in tableData" :key="idx" class="margin-top">
+        <a :href="item.url" target="_blank">
           <div class="app-container">
             <div class="app">
-              <el-avatar
-                :size="80"
-                src="https://www.leiue.com/uploads/2018/09/cloud-storage.jpg"
-                class="margin-top-sm"
-              ></el-avatar>
+              <el-avatar :size="80" :src="item.icon" class="margin-top-sm"></el-avatar>
             </div>
-            <el-tag type="success" class="margin-top" effect="dark">mycloud</el-tag>
-          </div>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://cloudapps.life:9999" target="_blank">
-          <div class="app-container">
-            <div class="app">
-              <el-avatar
-                :size="80"
-                src="https://th.bing.com/th/id/R543bc6bf4d5348ed1165bba008b10c9a?rik=%2fWDdmo9mqYNvHQ&riu=http%3a%2f%2fwww.huatusoft.com%2fupload%2f201810%2f31%2f201810311612419306.jpg&ehk=7%2fkgl1VH4jY3V%2fvSeQ9P4hyGqocaE0HVX3TMoqOJ4p4%3d&risl=&pid=ImgRaw"
-                class="margin-top-sm"
-              ></el-avatar>
-            </div>
-            <el-tag type="success" class="margin-top" effect="dark">mybolg</el-tag>
-          </div>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://cloudapps.life:8088" target="_blank">
-          <div class="app-container">
-            <div class="app">
-              <el-avatar
-                :size="80"
-                src="https://pic4.zhimg.com/v2-6318332ded946c504ba8d9d29ea05785_r.jpg"
-                class="margin-top-sm"
-              ></el-avatar>
-            </div>
-            <el-tag type="success" class="margin-top" effect="dark">openwrt</el-tag>
-          </div>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="https://kdocs.cn/l/ci12PKtsVGM2" target="_blank">
-          <div class="app-container">
-            <div class="app">
-              <el-avatar
-                :size="80"
-                src="https://img95.699pic.com/photo/40007/9238.jpg_wh300.jpg!/fh/300/quality/90"
-                class="margin-top-sm"
-              ></el-avatar>
-            </div>
-            <el-tag type="success" class="margin-top" effect="dark">晨会</el-tag>
-          </div>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://projectissue.longnows.cn" target="_blank">
-          <div class="app-container">
-            <div class="app">
-              <el-avatar
-                :size="80"
-                src="https://src.onlinedown.net/supply/sup_logo/logo-1128/306996_g.jpg"
-                class="margin-top-sm"
-              ></el-avatar>
-            </div>
-            <el-tag type="success" class="margin-top" effect="dark">Project Issue</el-tag>
+            <el-tag type="success" class="margin-top" effect="dark">{{ item.name }}</el-tag>
           </div>
         </a>
       </el-col>
@@ -80,7 +16,32 @@
 </template>
 
 <script>
-export default {}
+import apps from '@/model/apps'
+
+export default {
+  data() {
+    return {
+      tableData: [],
+      rows: 0,
+    }
+  },
+  async created() {
+    await this.getApps()
+    this.rows = (this.tableData.length / 9).toFixed(0) + 1
+    console.log(this.rows)
+  },
+  methods: {
+    async getApps() {
+      try {
+        this.tableData = await apps.getApps()
+      } catch (e) {
+        if (e.code === '10200') {
+          this.tableData = []
+        }
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -146,7 +107,11 @@ export default {}
 }
 
 .margin-top {
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+.margin-left {
+  margin-left: 32px;
 }
 
 .margin-top-sm {
