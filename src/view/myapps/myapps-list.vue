@@ -1,79 +1,14 @@
 <template>
   <div>
-    <el-row style="padding: 15px;">
-      <el-col :span="2">
-        <a href="http://cloudapps.life:8889" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <img src="https://www.leiue.com/uploads/2018/09/cloud-storage.jpg" class="image" />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <span>mycloud</span>
+    <el-row :gutter="20" style="margin-left: 55px;">
+      <el-col :span="3" v-for="(item, idx) in tableData" :key="idx" class="margin-top">
+        <a :href="item.url" target="_blank">
+          <div class="app-container">
+            <div class="app">
+              <el-avatar :size="80" :src="item.icon" class="margin-top-sm" fit="cover"></el-avatar>
             </div>
-          </el-card>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://cloudapps.life:9999" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <img
-              src="https://th.bing.com/th/id/R543bc6bf4d5348ed1165bba008b10c9a?rik=%2fWDdmo9mqYNvHQ&riu=http%3a%2f%2fwww.huatusoft.com%2fupload%2f201810%2f31%2f201810311612419306.jpg&ehk=7%2fkgl1VH4jY3V%2fvSeQ9P4hyGqocaE0HVX3TMoqOJ4p4%3d&risl=&pid=ImgRaw"
-              class="image"
-            />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <span>mybolg</span>
-            </div>
-          </el-card>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://cloudapps.life:8088" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <img src="https://pic4.zhimg.com/v2-6318332ded946c504ba8d9d29ea05785_r.jpg" class="image" />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <span>openwrt</span>
-            </div>
-          </el-card>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="https://kdocs.cn/l/ci12PKtsVGM2" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <img src="https://img95.699pic.com/photo/40007/9238.jpg_wh300.jpg!/fh/300/quality/90" class="image" />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <span>晨会</span>
-            </div>
-          </el-card>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://projectissue.longnows.cn" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <img src="https://tse3-mm.cn.bing.net/th/id/OIP.AMCwt_4jO6hl_9iZrpV6gAHaHa?pid=ImgDet&rs=1" class="image" />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <span>Project Issue</span>
-            </div>
-          </el-card>
-        </a>
-      </el-col>
-
-      <el-col :span="2" offset="1">
-        <a href="http://projectissue.longnows.cn" target="_blank">
-          <el-card :body-style="{ padding: '0px' }">
-            <!--            <div style="background: #495468;border-radius: 10px;">-->
-            <img
-              src="https://src.onlinedown.net/supply/sup_logo/logo-1128/306996_g.jpg"
-              class="personal-avatar"
-              alt=""
-            />
-            <div class="el-row--flex is-justify-center" style="padding: 15px;">
-              <!--                <span class="influence-font" style="border: 1px solid #67C23A;padding: 5px;border-radius: 30px">Project Issue</span>-->
-              <el-tag type="success">Project Issue</el-tag>
-            </div>
-            <!--            </div>-->
-          </el-card>
+            <el-tag type="success" class="margin-top" effect="dark">{{ item.name }}</el-tag>
+          </div>
         </a>
       </el-col>
     </el-row>
@@ -81,7 +16,32 @@
 </template>
 
 <script>
-export default {}
+import apps from '@/model/apps'
+
+export default {
+  data() {
+    return {
+      tableData: [],
+      rows: 0,
+    }
+  },
+  async created() {
+    await this.getApps()
+    this.rows = (this.tableData.length / 9).toFixed(0) + 1
+    console.log(this.rows)
+  },
+  methods: {
+    async getApps() {
+      try {
+        this.tableData = await apps.getApps()
+      } catch (e) {
+        if (e.code === '10200') {
+          this.tableData = []
+        }
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -130,5 +90,31 @@ export default {}
   line-height: 21px;
   color: #606266;
   font-weight: bold;
+}
+
+.app-container {
+  text-align: center;
+  width: 120px;
+}
+
+.app {
+  background: #ffffff;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+
+.margin-top {
+  margin-top: 25px;
+}
+
+.margin-left {
+  margin-left: 32px;
+}
+
+.margin-top-sm {
+  margin-top: 10px;
 }
 </style>

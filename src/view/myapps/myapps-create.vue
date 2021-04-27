@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <div class="title">新建书籍</div>
+    <div class="title">添加应用</div>
     <div class="wrap">
       <el-row>
         <el-col :lg="16" :md="20" :sm="24" :xs="24">
           <el-form :model="form" status-icon ref="form" label-width="100px" @submit.native.prevent>
-            <el-form-item label="书名" prop="title">
-              <el-input size="medium" v-model="form.title" placeholder="请填写书名"></el-input>
+            <el-form-item label="名称" prop="name">
+              <el-input size="name" v-model="form.name" placeholder="请填写名称"></el-input>
             </el-form-item>
-            <el-form-item label="作者" prop="author">
-              <el-input size="medium" v-model="form.author" placeholder="请填写作者"></el-input>
+            <el-form-item label="url" prop="url">
+              <el-input size="url" v-model="form.url" placeholder="请填写url"></el-input>
             </el-form-item>
-            <el-form-item label="封面" prop="image">
-              <el-input size="medium" v-model="form.image" placeholder="请填写封面地址"></el-input>
+            <el-form-item label="图标" prop="icon">
+              <el-input size="icon" v-model="form.icon" placeholder="请填写图标地址"></el-input>
             </el-form-item>
             <el-form-item label="简介" prop="summary">
               <el-input
@@ -37,16 +37,16 @@
 </template>
 
 <script>
-import books from '@/model/books'
+import apps from '@/model/apps'
 
 export default {
   data() {
     return {
       form: {
-        title: '',
-        author: '',
+        name: '',
+        url: '',
+        icon: '',
         summary: '',
-        image: '',
       },
       loading: false,
     }
@@ -55,10 +55,12 @@ export default {
     async submitForm(formName) {
       try {
         this.loading = true
-        const res = await books.createBook(this.form)
+        const res = await apps.createApps(this.form)
         this.loading = false
         // eslint-disable-next-line eqeqeq
-        if (res.code == '10212') {
+        console.log(res)
+        // eslint-disable-next-line eqeqeq
+        if (res.code == '10215') {
           this.$message.success(`${res.message}`)
           this.resetForm(formName)
         }

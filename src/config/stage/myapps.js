@@ -17,6 +17,24 @@ const myappsRouter = {
       inNav: true,
       icon: 'iconfont icon-tushuguanli',
     },
+    {
+      title: '添加应用',
+      type: 'view',
+      name: 'addapps',
+      route: '/myapps/add',
+      filePath: 'view/myapps/myapps-create.vue',
+      inNav: true,
+      icon: 'iconfont icon-tushuguanli',
+    },
+    {
+      title: '应用管理',
+      type: 'view',
+      name: 'mgrapps',
+      route: '/myapps/mgr',
+      filePath: 'view/myapps/myapps-mgr.vue',
+      inNav: true,
+      icon: 'iconfont icon-tushuguanli',
+    },
   ],
 }
 
