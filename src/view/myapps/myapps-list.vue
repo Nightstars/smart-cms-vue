@@ -5,7 +5,7 @@
         <a :href="item.url" target="_blank">
           <div class="app-container">
             <div class="app">
-              <el-avatar :size="80" :src="item.icon" class="margin-top-sm"></el-avatar>
+              <el-avatar :size="80" :src="item.icon" class="margin-top-sm" fit="cover"></el-avatar>
             </div>
             <el-tag type="success" class="margin-top" effect="dark">{{ item.name }}</el-tag>
           </div>

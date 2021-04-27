@@ -1,4 +1,5 @@
-import _axios from 'lin/plugin/axios'
+// eslint-disable-next-line no-unused-vars
+import _axios, { _delete, get, put } from 'lin/plugin/axios'
 
 class Apps {
   async createApps(data) {
@@ -15,6 +16,21 @@ class Apps {
       url: '/v1/apps',
       handleError: 'true',
     })
+  }
+
+  async deleteAPP(id) {
+    const res = _delete(`/v1/apps/${id}`)
+    return res
+  }
+
+  async getAppById(id) {
+    const res = get(`/v1/apps/${id}`)
+    return res
+  }
+
+  async editAppById(id, data) {
+    const res = put(`/v1/apps/${id}`, data)
+    return res
   }
 }
 

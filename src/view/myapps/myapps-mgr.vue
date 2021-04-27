@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="margin-bottom">
     <!-- 列表页面 -->
     <div class="container" v-if="!showEdit">
       <div class="header"><div class="title">应用列表</div></div>
@@ -16,19 +16,20 @@
     </div>
 
     <!-- 编辑页面 -->
-    <!--    <books-modify v-else @editClose="editClose" :editBookID="editBookID"></books-modify>-->
+    <AppEdit v-else @editClose="editClose" :editAppID="editBookID"></AppEdit>
   </div>
 </template>
 
 <script>
 import apps from '@/model/apps'
 import LinTable from '@/component/base/table/lin-table'
-// import BooksModify from '@/view/books/books-modify'
+import AppEdit from './myapps-edit'
 
 export default {
   name: 'myapps-mgr',
   components: {
     LinTable,
+    AppEdit,
   },
   data() {
     return {
@@ -64,13 +65,13 @@ export default {
         name: '编辑',
         func: 'handleEdit',
         type: 'primary',
-        permission: '修改应用',
+        permission: '编辑应用',
       },
       {
         name: '删除',
         func: 'handleDelete',
         type: 'danger',
-        permission: '删除应用',
+        permission: '移除应用',
       },
     ]
     this.loading = false
@@ -84,6 +85,34 @@ export default {
           this.tableData = []
         }
       }
+    },
+    handleEdit(val) {
+      console.log('val', val)
+      this.showEdit = true
+      this.editBookID = val.row.id
+    },
+    handleDelete(val) {
+      this.$confirm('此操作将永久移除该应用, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning',
+      }).then(async () => {
+        const res = await apps.deleteAPP(val.row.id)
+        console.log(res)
+        // eslint-disable-next-line eqeqeq
+        if (res.code == '10216') {
+          await this.getApps()
+          this.$message({
+            type: 'success',
+            message: `${res.message}`,
+          })
+        }
+      })
+    },
+    rowClick() {},
+    editClose() {
+      this.showEdit = false
+      this.getApps()
     },
   },
 }
@@ -111,6 +140,10 @@ export default {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+  }
+
+  .margin-bottom {
+    padding-bottom: 25px;
   }
 }
 </style>
