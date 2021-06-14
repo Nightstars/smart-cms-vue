@@ -82,8 +82,8 @@ export default {
   //background-size: cover;
   //background: url('../../assets/image/login/login-bg4.jpg') no-repeat;
   width: 100%;
-  height: 100vh;
-  margin: 0 auto;
+  height: 100%;
+  //margin: 0 auto;
   background-image: url('../../assets/image/login/login-bg4.jpg');
   background-repeat: no-repeat;
   background-size: cover; /* 重点二 */
