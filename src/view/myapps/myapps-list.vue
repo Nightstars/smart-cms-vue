@@ -1,7 +1,17 @@
 <template>
   <div>
-    <el-row :gutter="20" style="margin-left: 55px;">
-      <el-col :span="3" v-for="(item, idx) in tableData" :key="idx" class="margin-top">
+    <el-row :gutter="20" style="margin:0 auto;">
+      <el-col
+        :xs="8"
+        :sm="6"
+        :md="4"
+        :lg="3"
+        :xl="2"
+        :span="3"
+        v-for="(item, idx) in tableData"
+        :key="idx"
+        class="margin-top"
+      >
         <a :href="item.url" target="_blank">
           <div class="app-container">
             <div class="app">

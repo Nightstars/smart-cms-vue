@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-<!--    <div class="team-name hidden-sm-and-down"><img src="@/assets/image/login/team-name.png" alt="logo" /></div>-->
+    <!--    <div class="team-name hidden-sm-and-down"><img src="@/assets/image/login/team-name.png" alt="logo" /></div>-->
     <div class="form-box" v-loading="loading" element-loading-background="rgba(0, 0, 0, 0)">
       <div class="title"><h1 title="Lin">Smart CMS</h1></div>
       <form class="login-form" autocomplete="off" @submit.prevent="throttleLogin()">
@@ -77,10 +77,17 @@ export default {
 
 <style lang="scss">
 .login {
+  //width: 100%;
+  //height: 100%;
+  //background-size: cover;
+  //background: url('../../assets/image/login/login-bg4.jpg') no-repeat;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background: #1b2c5f url('../../assets/image/login/login-bg4.jpg') no-repeat center center;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: url('../../assets/image/login/login-bg4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* 重点二 */
+  overflow: auto;
 
   .team-name {
     position: fixed;
