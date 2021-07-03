@@ -68,7 +68,7 @@
     </el-row>
 
     <el-row :gutter="20" style="margin-top: 20px;">
-      <el-col :span="6">
+      <el-col :span="12">
         <div class="grid-content bg-purple">
           <disk0 class="su-center"></disk0>
           <div class="label-txt">
@@ -76,7 +76,7 @@
           </div>
         </div></el-col
       >
-      <el-col :span="6">
+      <el-col :span="12">
         <div class="grid-content bg-purple">
           <disk1 class="su-center"></disk1>
           <div class="label-txt">
@@ -84,7 +84,10 @@
           </div>
         </div>
       </el-col>
-      <el-col :span="6">
+    </el-row>
+
+    <el-row :gutter="20" style="margin-top: 20px;">
+      <el-col :span="12">
         <div class="grid-content bg-purple">
           <disk2 class="su-center"></disk2>
           <div class="label-txt">
@@ -92,7 +95,7 @@
           </div>
         </div>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="12">
         <div class="grid-content bg-purple">
           <disk class="su-center"></disk>
           <div class="label-txt">
@@ -102,25 +105,25 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="20" style="margin-top: 20px;">
-      <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <netens33 class="su-center"></netens33>
-          <div class="label-txt-line">
-            <el-tag type="success">ens33--RX</el-tag>
-          </div>
-        </div>
-      </el-col>
+    <!--    <el-row :gutter="20" style="margin-top: 20px;">-->
+    <!--      <el-col :span="12">-->
+    <!--        <div class="grid-content bg-purple">-->
+    <!--          <netens33 class="su-center"></netens33>-->
+    <!--          <div class="label-txt-line">-->
+    <!--            <el-tag type="success">ens33&#45;&#45;RX</el-tag>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </el-col>-->
 
-      <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <netens33Tx class="su-center"></netens33Tx>
-          <div class="label-txt-line">
-            <el-tag type="success">ens33--TX</el-tag>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
+    <!--      <el-col :span="12">-->
+    <!--        <div class="grid-content bg-purple">-->
+    <!--          <netens33Tx class="su-center"></netens33Tx>-->
+    <!--          <div class="label-txt-line">-->
+    <!--            <el-tag type="success">ens33&#45;&#45;TX</el-tag>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--    </el-row>-->
   </div>
 </template>
 
@@ -138,8 +141,8 @@ import swap from '@/plugin/chart/component/swap'
 import disk0 from '@/plugin/chart/component/disk0'
 import disk1 from '@/plugin/chart/component/disk1'
 import disk2 from '@/plugin/chart/component/disk2'
-import netens33 from '@/plugin/chart/component/netens33'
-import netens33Tx from '@/plugin/chart/component/netens33Tx'
+// import netens33 from '@/plugin/chart/component/netens33'
+// import netens33Tx from '@/plugin/chart/component/netens33Tx'
 
 export default {
   components: {
@@ -156,8 +159,8 @@ export default {
     disk0,
     disk1,
     disk2,
-    netens33,
-    netens33Tx,
+    // netens33,
+    // netens33Tx,
   },
   data() {
     return {

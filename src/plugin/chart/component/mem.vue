@@ -103,7 +103,9 @@ export default {
     }
     setInterval(() => {
       http.get('/quicklook').then(res => {
-        optins.series[0].data[0].value = res.mem.toFixed(2) - 0
+        if (res) {
+          optins.series[0].data[0].value = res.mem.toFixed(2) - 0
+        }
       })
       myChart.setOption(optins, true)
     }, 1000)

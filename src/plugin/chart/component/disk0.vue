@@ -46,9 +46,11 @@ export default {
 
     setInterval(() => {
       http.get('/fs').then(res => {
-        optins.series[0].data[0].value = (res[0].free / 1024 / 1024 / 1024).toFixed(2) - 0
-        optins.series[0].data[1].value = (res[0].used / 1024 / 1024 / 1024).toFixed(2) - 0
-        optins.title.subtext = `${(res[0].size / 1024 / 1024 / 1024).toFixed(2) - 0}G`
+        if (res) {
+          optins.series[0].data[0].value = (res[0].free / 1024 / 1024 / 1024).toFixed(2) - 0
+          optins.series[0].data[1].value = (res[0].used / 1024 / 1024 / 1024).toFixed(2) - 0
+          optins.title.subtext = `${(res[0].size / 1024 / 1024 / 1024).toFixed(2) - 0}G`
+        }
       })
       myDiskChart.setOption(optins, true)
     }, 1000)
